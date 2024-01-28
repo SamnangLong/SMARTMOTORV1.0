@@ -109,6 +109,13 @@ function onMessageArrived(message) {
             document.getElementById('box_Mspeed').value = values;
             document.getElementById('box_Sspeed').value = values;
           }
+          const Voltage = document.getElementById('box_voltage').value;
+          const Current = document.getElementById('box_current').value;
+          const PF = '0.68';
+        
+        
+          const Power = document.getElementById('box_power');
+          Power.value = (Voltage * Current * Math.sqrt(3) * PF).toFixed(2);
 
 
           // const scheduleModeCheckbox = document.getElementById('ScheduleMode');
@@ -203,13 +210,7 @@ function button_read() {
   // ButtonRead.disabled = true;
   // ButtonRead.style.backgroundColor = 'green';
 
-  const Voltage = document.getElementById('box_voltage').value;
-  const Current = document.getElementById('box_current').value;
-  const PF = '0.68';
 
-
-  const Power = document.getElementById('box_power');
-  Power.value = (Voltage * Current * Math.sqrt(3) * PF).toFixed(2);
         
 }
 
